@@ -93,7 +93,11 @@ class Resume extends React.Component{
                 
                  
 
-         
+                <Footer 
+                   pageNo="page1"
+                  />
+
+
           
 
            </div>

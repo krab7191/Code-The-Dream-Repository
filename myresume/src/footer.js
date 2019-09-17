@@ -4,7 +4,18 @@ class Footer extends Component{
         return(
             <div>
                 
-               <p>Page1</p>
+               
+                <footer className="this is my footer">
+                     <div className="container">
+                         <div className="columns">
+                             <div className="column">
+                                 <p style={{paddingLeft: '1000px'}}>{this.props.pageNo}</p>
+                             </div>
+                             
+                         </div>
+                     </div>
+                 </footer>
+
             </div>
             
         )
