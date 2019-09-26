@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React,{Component} from 'react'
 import Skills from './Skills'
 import SkillData from './SkillData'
 import Logo from './mulelego.jfif';
@@ -8,7 +8,7 @@ import Experience from './Experience'
 import Development from './Development'
 import Footer from './footer'
 import './Mystyle.css'
-class App extends React.Component {
+class App extends Component {
 
     render() {
         const data = SkillData.map(skill => <Skills key={skill.id} skill={skill} />)
@@ -16,7 +16,7 @@ class App extends React.Component {
         return (
 
             <div style={{
-                height: 1600,
+                height: 1400,
                 width: 1000,
                 padding: 'none',
                 backgroundColor: 'white',
@@ -43,9 +43,10 @@ class App extends React.Component {
                 </div>
 
 
-                <div className="Skill Matrix">
+                <div  className="Skill Matrix">
                     <h3 className="center"> Skill Matrix:</h3>
-                    <p className="height">{data}</p>
+                    <div className="height">{data}</div>
+                    
                 </div>
 
                 <div className="Experience"> 

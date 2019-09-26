@@ -13,8 +13,8 @@ class Experience extends Component {
                 
                 <div style={{ paddingLeft: '80px' }}>{
 
-                    this.state.ExperienceList.map((rowdata, exp) =>
-                        <div>
+                    this.state.ExperienceList.map((rowdata) =>
+                        <React.Fragment key={rowdata.id}>
                             <p  >
                                <b><i>{rowdata.Roll}</i></b><br/>
                                <b><i>{rowdata.Company}</i></b> <br/>
@@ -24,9 +24,9 @@ class Experience extends Component {
 
                             {
                                 (typeof (rowdata.detail) == 'object') ?
-                                    <div>
-                                        {rowdata.detail.map((subRowData, exp1) =>
-                                            <div>
+                                    <React.Fragment>
+                                        {rowdata.detail.map((subRowData) =>
+                                            <React.Fragment key={rowdata.id}>
                                                 <ul>
 
                                                     <li>{subRowData.detail1}</li>
@@ -34,13 +34,13 @@ class Experience extends Component {
                                                     <li>{subRowData.detail3}</li>
                                                     <li>{subRowData.detail4}</li>
                                                 </ul>
-                                            </div>
+                                            </React.Fragment>
                                         )
                                         }
-                                    </div> : null
+                                    </React.Fragment> : null
                             }
 
-                        </div>
+                        </React.Fragment>
                     )
                 }
 

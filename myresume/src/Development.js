@@ -1,6 +1,6 @@
-import React from 'react'
+import React ,{Component}from 'react'
 import  Developmentlist from './Developmentlist'
-class Development extends React.Component {
+class Development extends Component {
    constructor(props){
         super(props);
         this.State={
@@ -13,30 +13,30 @@ class Development extends React.Component {
         
         return (
             <div>{
-                this.State.Developmentlist.map((rowdata,exp) => 
-                <div>
-                    <h5 >{rowdata.Roll}</h5>
+                this.State.Developmentlist.map((rowdata) => 
+                <React.Fragment key={rowdata.id}>
+                    <h5 ><i> {rowdata.Roll}</i></h5>
                 
 
                 {
                     (typeof(rowdata.detail)=='object')?
                     <div>
-                        {rowdata.detail.map((subRowData,exp1) =>
-                        <div>
+                        {rowdata.detail.map((subRowData) =>
+                        <React.Fragment key={rowdata.id}>
                            <ul>
                                <li>{subRowData.detail1}</li>
                                <li>{subRowData.detail2}</li>
                                <li>{subRowData.detail3}</li>
 
                            </ul> 
-                        </div>
+                        </React.Fragment>
                         )
                         }
                     </div>: null
                 }
                 
                 
-                </div>
+                </React.Fragment>
                  )
                 }
                  

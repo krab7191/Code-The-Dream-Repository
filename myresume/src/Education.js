@@ -13,8 +13,8 @@ class Education extends Component {
                 
                 <div>
                     {
-                        this.state.EducationList.map((datarow, edu) =>
-                            <div>
+                        this.state.EducationList.map((datarow) =>
+                            <React.Fragment key={datarow.id}>
                                 <p>
                                    <b><i>{datarow.university}</i></b> <br />
                                     <i>{datarow.country}</i>
@@ -22,19 +22,19 @@ class Education extends Component {
                                 {
                                     (typeof (datarow.Description) == 'object') ?
                                     <div>
-                                        {datarow.Description.map((subDatarow, edu) =>
-                                            <div>
+                                        {datarow.Description.map((subDatarow) =>
+                                            <React.Fragment key={datarow.id}>
                                                 <ul>
 
                                                     <li>{subDatarow.Description1}</li>
 
                                                 </ul>
-                                            </div>
+                                            </React.Fragment>
                                         )
                                         }
                                     </div> : null
                                 }
-                            </div>
+                            </React.Fragment>
                         )
                     }
 
