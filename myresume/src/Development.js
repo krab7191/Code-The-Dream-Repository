@@ -1,46 +1,40 @@
-import React ,{Component}from 'react'
-import  Developmentlist from './Developmentlist'
+import React, { Component, Fragment } from 'react';  // Don't forget formatting!!
+import Developmentlist from './Developmentlist';
 class Development extends Component {
-   constructor(props){
+    constructor(props) {
         super(props);
-        this.State={
-            Developmentlist:Developmentlist
+        this.State = {
+            Developmentlist: Developmentlist // Nice work using state!!
         }
-        }
+    }
 
     render() {
-       
-        
+
         return (
-            <div>{
-                this.State.Developmentlist.map((rowdata) => 
-                <React.Fragment key={rowdata.id}>
-                    <h5 ><i> {rowdata.Roll}</i></h5>
-                
-
+            <> {/* As of React 16 you can use 'fragments' so your html doesn't become cluttered */}
                 {
-                    (typeof(rowdata.detail)=='object')?
-                    <div>
-                        {rowdata.detail.map((subRowData) =>
-                        <React.Fragment key={rowdata.id}>
-                           <ul>
-                               <li>{subRowData.detail1}</li>
-                               <li>{subRowData.detail2}</li>
-                               <li>{subRowData.detail3}</li>
+                    this.State.Developmentlist.map((rowdata, i) => // Use the index unless you have a read database unique primary key
+                        <Fragment key={i}>  {/* Nice job with the fragment here! You can use the same strategy as Component with importing. */}
+                            <h5 ><i> {rowdata.Roll}</i></h5>
 
-                           </ul> 
-                        </React.Fragment>
-                        )
-                        }
-                    </div>: null
+                            {
+                                (typeof (rowdata.detail) == 'object') &&
+                                <div>
+                                    {rowdata.detail.map((subRowData, i) =>
+                                        // You don't need this fragment since the 'ul' is already the unique parent element
+                                        <ul key={i}> {/* Again use map index */}
+                                            <li>{subRowData.detail1}</li>
+                                            <li>{subRowData.detail2}</li>
+                                            <li>{subRowData.detail3}</li>
+                                        </ul>
+                                    )
+                                    }
+                                </div>  // Since you don't have a meaningful 2nd condition for this ternary operator, you can just use a 'logical and' operator
+                            }
+                        </Fragment>
+                    )
                 }
-                
-                
-                </React.Fragment>
-                 )
-                }
-                 
-            </div>
+            </>
         )
     }
-}export default  Development;
+} export default Development;

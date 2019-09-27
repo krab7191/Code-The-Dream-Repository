@@ -1,10 +1,5 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 import App from './App'
-         
-         
-                 
-
-                
-
-ReactDom.render(<App/> ,document.querySelector("#root"))
+// Don't forget the formatting!
+ReactDom.render(<App />, document.querySelector("#root"));

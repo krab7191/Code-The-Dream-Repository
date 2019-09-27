@@ -1,25 +1,30 @@
-
 .Primary {
-    color:blue;
-    }
+    color: blue;
+}
 
-    .center {
-        margin: auto;
-        text-decoration: underline;
-        border: 1px solid white;
-        padding-left: 80px
-      }
-    
-.header{
-    text-align: center;
-     line-height: 4pt
-}
-.paragraph{
+.center {
+    margin: auto;
+    text-decoration: underline;
     border: 1px solid white;
-     padding-left: 83px;
-    padding-right: 83px 
+    /* This and the .paragraph border rule should be combined */
+    padding-left: 80px/* Same with padding of the same value */
 }
-.height{
+
+.header {
+    text-align: center;
+    line-height: 4pt
+}
+
+.paragraph {
+    border: 1px solid white;
+    /* This and the .center border rule should be combined */
+    padding-left: 83px;
+    padding-right: 83px
+}
+
+.height {
     line-height: 4pt;
-    padding-left: 80px
+    padding-left: 80px/* Same with padding of the same value */
 }
+
+/* Formatting!!! */
